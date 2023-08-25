@@ -101,3 +101,21 @@ cd ..
 kubectl apply -f cpa.yaml
 ```
 
+
+
+**Run**
+
+Port-forward
+
+```bash
+kubectl port-forward svc/exp-test-service 8085:8085
+```
+
+
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"action": "increase","parameter":1024}' http://localhost:8085/trigger
+
+curl -X POST -H "Content-Type: application/json" -d '{"action": "decrease","parameter":1024}' http://localhost:8085/trigger
+```
+
