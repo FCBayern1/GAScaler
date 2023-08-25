@@ -1,0 +1,25 @@
+apiVersion: custompodautoscaler.com/v1
+kind: CustomPodAutoscaler
+metadata:
+  name: gas
+  labels: 
+    app: cpuint
+    tier: cloud
+    role: cpa
+spec:
+  template:
+    spec:
+      containers:
+      - name: python-custom-autoscaler
+        image: joshuaissb/gascaler:latest
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: StatefulSet
+    name: exp-test-statefulset
+  config:
+    - name: minReplicas
+      value: "1"
+    - name: runMode
+      value: "per-resource"
+    - name: interval
+      value: "20000" # milliseconds
