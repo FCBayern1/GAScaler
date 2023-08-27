@@ -70,13 +70,11 @@ kubectl -n monitoring port-forward svc/prometheus-operated 9090
 
 **Push code to docker hub**
 
-Remember to modify the credential of K8s to your own credential, you can check your credential by this command.
+Remember to modify the credential of K8s (the one runs your code no matter on your laptop or Raspberry Pi in this paper) to your own credential, you can check your credential and configuration information by this command.
 
 ```shell
 kubectl config view --raw
 ```
-
-
 
 ```bash
 cd exp_test_pi
@@ -112,6 +110,8 @@ kubectl port-forward svc/exp-test-service 8085:8085
 ```
 
 
+
+The parameter is modifiable
 
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"action": "increase","parameter":1024}' http://localhost:8085/trigger
