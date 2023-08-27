@@ -86,7 +86,7 @@ chmod +x push.sh
 **Apply the code to your K8s cluster**
 
 ```shell
-kubectl apply -f exp_test_statefulset.yaml              1
+kubectl apply -f exp_test_statefulset.yaml             
 kubectl apply -f exp_test_servicemonitor.yaml
 ```
 
