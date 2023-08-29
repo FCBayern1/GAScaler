@@ -177,7 +177,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"action": "decrease","para
 
 
 
-**You can find the experiment result by doing so:**
+**You can find the experiment result by doing so(showar, pap,gas,hpa):**
 
 ```bash
 kubectl get pods
