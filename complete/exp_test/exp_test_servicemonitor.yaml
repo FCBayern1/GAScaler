@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app: exp-test-demo
+  name: exp-test-servicemonitor
+spec:
+  endpoints:
+  - interval: 10s
+    port: exp-test-port
+  selector:
+    matchLabels:
+      app: exp-test-demo
